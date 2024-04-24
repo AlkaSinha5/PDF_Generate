@@ -9,6 +9,7 @@ const pdfSchema = new mongoose.Schema({
     driver: { type: String, required: true },
     truckNo: { type: String, required: true },
     mobileNumber: { type: String, required: true },
+    consigner:{type: String, required: true},
     consigneeName: { type: String, required: true },
     consigneeGSTIN: { type: String },
     invoiceNo: { type: String },
