@@ -1,10 +1,15 @@
 import express from "express";
-import { AddPdf, GetAllPdf } from "../controllers/pdfContoller.js";
+import { AddPdf, DeletePDF, GetAllPdf, GetPDFById, UpdatePDF} from "../controllers/pdfContoller.js";
+
 
 const router = express.Router();
 
 router.post("/addPDF", AddPdf);
-router.get("/getAllOrder",  GetAllPdf);
+router.get("/getAllPDF",  GetAllPdf);
+router.delete("/deletePDF/:id", DeletePDF);
+router.put("/updatePDF/:id", UpdatePDF );
+router.get("/getPDFById/:id", GetPDFById);
+// router.get("/Pdf/:id",Pdf);
 
 
 

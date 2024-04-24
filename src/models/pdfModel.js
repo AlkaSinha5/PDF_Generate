@@ -11,15 +11,18 @@ const pdfSchema = new mongoose.Schema({
     mobileNumber: { type: String, required: true },
     consigneeName: { type: String, required: true },
     consigneeGSTIN: { type: String },
-    description: { type: String },
-    payment: { type: String },
-    numberOfArticles: { type: Number },
-    weightMt: { type: Number },
-    freightRateMt: { type: Number },
-    freightAmount: { type: Number },
     invoiceNo: { type: String },
     royalty: { type: String },
     venue: { type: String },
+    detail: [{
+        description: { type: String, required: true },
+        descriptionGSTIN: { type: String },
+        payment: { type: String },
+        noOfArticles: { type: Number },
+        weight: { type: Number },
+        freightRate: { type: Number },
+        freightAmount: { type: Number },
+    }],
 });
 
 const pdf = mongoose.model('PDF', pdfSchema);

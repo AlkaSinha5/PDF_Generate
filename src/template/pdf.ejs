@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Goods Consignment Note</title>
+    <style>
+      body {
+        font-family: "Courier New", Courier, monospace;
+        margin: 0;
+        padding: 0;
+        background: #f7f7f7;
+      }
+      .consignment-note {
+        max-width: 800px;
+        margin: 20px auto;
+        padding: 20px;
+        background: #fff;
+        border: 1px solid #ddd;
+      }
+      .header,
+      .footer {
+        text-align: center;
+      }
+      .section {
+        margin-bottom: 20px;
+      }
+      table {
+        width: 100%;
+        border-collapse: collapse;
+      }
+      th,
+      td {
+        border: 1px solid #000;
+        padding: 8px;
+        text-align: left;
+      }
+      th {
+        background-color: #f2f2f2;
+        font-weight: bold;
+      }
+      .heading {
+        font-weight: bold;
+      }
+      .footer {
+        margin-top: 30px;
+      }
+      .footer div {
+        margin-bottom: 10px;
+      }
+      .footer hr {
+        margin-top: 10px;
+        margin-bottom: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="consignment-note">
+      <div class="header">
+        <h1>MINESTONE INFRADEV</h1>
+        <p class="heading">Bapu Bazar,Bijainagar,Ajmer,Rajasthan,305624</p>
+        <p><span class="heading">PAN:</span> ANNPC6983E</p>
+        <p><span class="heading">GSTIN:</span> 08ANNPC6983E1ZP</p>
+        <h2>GOODS CONSIGNMENT NOTE</h2>
+        <p>
+          <span class="heading">No.</span> : [CRL -32]
+          <span class="heading">Date:</span>[Date]
+        </p>
+        <p>
+          <span class="heading">From:</span> : BIJOLIYA
+          <span class="heading">To:</span> MUNDRA PORT
+        </p>
+      </div>
+
+      <div class="section">
+        <table>
+          <tr>
+            <th>TRUCK NO: </th>
+            <td> <%= data.truckNo %></td>
+            <th>Driver:</th>
+            <td> <%= data.driver%></td>
+          </tr>
+          <tr>
+            <th>TRUCK TYPE: </th>
+            <td><%= data.truckType %></td>
+            <th>MOBILE</th>
+            <td><%= data.mobileNumber %></td>
+          </tr>
+          <!-- Add more rows as needed -->
+        </table>
+      </div>
+
+      <div class="section">
+        <table>
+          <tr>
+            <th>Consignor</th>
+            <td><%= data.truckType %></td>
+            <th>Consignee Name</th>
+            <td><%= data.consigneeName %></td>
+            <th>Consignee GSITN</th>
+            <td><%= data.consigneeGSTIN %></td>
+          </tr>
+          <!-- Add more rows as needed -->
+        </table>
+      </div>
+
+      <div class="section">
+        <table>
+          <tr>
+            <th>Description: <%= data.description %></th>
+            <th>No. of Articles: <%= data.numberOfArticles %></th>
+            <th>Weight - MT: <%= data.weightMt %></th>
+            <th>Freight Rate / MT : <%= data.freightRateMt %></th>
+            <th>Freight Amount: <%= data.freightAmount %></th>
+          </tr>
+          <tr>
+            <td>
+              SAND STONE CRT ONLY FOR EXPORTS ADITI ENTERPRISES BIJOLIYA
+              <p class="heading">GSTIN:</p>
+              [GSTIN]
+              <p class="heading">Payment No.:</p>
+              [Payment No]
+            </td>
+            <td>[Number of Articles]</td>
+            <td>[Weight in MT]</td>
+            <td>[Freight Rate per MT]</td>
+            <td>[Total Freight Amount]</td>
+          </tr>
+          <tr>
+            <td colspan="3"></td>
+            <td class="heading">Total</td>
+            <td>[Total Amount]</td>
+          </tr>
+        </table>
+      </div>
+
+      <div class="footer">
+        <div style="display: flex; justify-content: space-between">
+          <p><span class="heading">Invoice No:</span> <%= data.invioceNo %></p>
+          <p><span class="heading">Royalty:</span> <%= data.royalty %></p>
+          <p><span class="heading">Venue:</span> <%= data.venue %></p>
+        </div>
+        <hr />
+        <p style="text-align: center; margin-bottom: 50px">
+          WE ARE NOT RESPONSIBLE FOR ANY LEAKAGE AND BREAKAGE
+        </p>
+        <hr style="width: 50%; float: right" />
+        <p class="heading" style="text-align: right; clear: both">
+          For,MINESTONE INFRADEV
+        </p>
+      </div>
+    </div>
+  </body>
+</html>
